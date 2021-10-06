@@ -1,0 +1,91 @@
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+!------ Include the above in your HEAD tag ---------->
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-light">
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="basicExampleNav2">
+  
+      <!--Left-->
+      <h3>Hello {{username}}</h3>
+
+      <!-- Right -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="/upload" class="nav-link waves-effect">
+            Upload
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact" class="nav-link waves-effect">
+            Contact
+          </a>
+        </li>
+        <li class="nav-item">
+           <button id="logout" (click)="logout()">logout</button>
+        </li>
+      </ul>
+  
+    </div>
+    <!-- Links -->
+  
+  </nav>
+  <!-- Navbar -->
+
+<section class="testimonial py-5" id="testimonial">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4 py-5 bg-primary text-white text-center ">
+                <div class=" ">
+                    <div class="card-body">
+                        <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
+                        <h2 class="py-3">Video Upload</h2>
+                        <p>Upload your videos here.Maximum length allowed for a video is 25 minutes and the quality should not be less than 3gp.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 py-5 border">
+                <h4 class="pb-4">Fill the video details.</h4>
+                <form [formGroup]='uploadForm' action="/upload-video" novalidate>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <input id="Full Name" name="Full Name" formControlName="videoname" placeholder="Video Name" class="form-control" type="text">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <input type="text" class="form-control" formControlName="tagline" id="inputEmail4" placeholder="Tagline">
+                        </div>
+                      </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input id="Mobile No." name="Mobile No." formControlName="genre" placeholder="genre" class="form-control" required="required" type="text">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input id="Mobile No." name="Mobile No." formControlName="location" value="{{username}}" class="form-control" required="required" type="text">
+                        </div>
+                        <div class="form-group col-md-12">
+                                  <textarea id="description" name="description" formControlName="description" cols="40" rows="5" class="form-control" placeholder="Description..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <input id="Full Name" name="Full Name" formControlName="thumbUrl" placeholder="Thumbnail" class="form-control" type="text">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <input type="text" class="form-control" formControlName="videoUrl" id="inputEmail4" placeholder="Video Url">
+                          </div>
+
+                      </div>
+                    
+                    <div class="form-row">
+                        <button type="button" (click)="upload()" class="btn btn-danger" >Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

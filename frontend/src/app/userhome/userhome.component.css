@@ -1,0 +1,16 @@
+nav{
+    background-color:rgb(205, 92, 92);
+}
+
+#logout{
+    margin-top: 5px;
+}
+
+.video-container{
+   width : 60%;
+}
+
+.desc-container{
+    width : 30%;
+    float : right;
+}

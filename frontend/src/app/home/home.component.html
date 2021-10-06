@@ -1,0 +1,22 @@
+<div>
+<ul *ngFor ="let video of videos">
+ <li>
+  <div class="video-container" style="background-color:#41B3A3;"> 
+    <h2>{{video.videoname}}</h2>
+    <h3>#{{video.tagline}}</h3><br>
+    <h4>Author : {{video.location}}</h4>
+   <youtube-player
+    [videoId] = "video.videoUrl"
+    suggestedQuality="highres" 
+    [height]="500" 
+    [width]="750" 
+    [startSeconds]="4"
+    [endSeconds]="8">
+  </youtube-player>
+   
+   <h4>Genre: {{video.genre}}</h4><br>
+   <h5>{{video.description}}</h5>
+ </div>
+</li>
+</ul>
+</div>

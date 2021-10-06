@@ -1,0 +1,57 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-light">
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="basicExampleNav2">
+  
+      <!--Left-->
+      <h3>Hello {{username}}</h3>
+
+      <!-- Right -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="/upload" class="nav-link waves-effect">
+            Upload
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact" class="nav-link waves-effect">
+            Contact
+          </a>
+        </li>
+        <li class="nav-item">
+           <button id="logout" (click)="logout()">logout</button>
+        </li>
+      </ul>
+  
+    </div>
+    <!-- Links -->
+  
+  </nav>
+  <!-- Navbar -->
+
+
+<div>
+<ul *ngFor ="let video of videos">
+ <li *ngIf = "username == video.location">
+  <div class="video-container" style="background-color:#41B3A3;"> 
+    <h2>{{video.videoname}}</h2><br>
+    <h3>#{{video.tagline}}</h3>
+      <youtube-player
+        [videoId] = "video.videoUrl"
+        suggestedQuality="highres" 
+        [height]="500" 
+        [width]="750" 
+        [startSeconds]="4"
+        [endSeconds]="8">
+      </youtube-player>
+    <br>
+   <h4>Genre: {{video.genre}}</h4><br>
+   <h5>{{video.description}}</h5>
+ </div>
+</li>
+</ul>
+</div>
+
+
+
